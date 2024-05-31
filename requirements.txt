@@ -1,0 +1,13 @@
+pandas==1.2.0
+keras==2.4.3
+numpy==1.19.5
+tensorflow==2.4.0
+watermark==2.1.0
+matplotlib==3.3.3
+h5py==2.10.0
+progressbar==2.5
+scipy==1.6.0
+tqdm
+jupyter
+ipykernel
+math
