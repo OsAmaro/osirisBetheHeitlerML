@@ -1,0 +1,4 @@
+! Kinetic energy for species "ions"
+  Iter        Time          Total Par.             Kin. Energy
+     0   0.0000000               8000  0.0000000000000000E+00
+     1  0.20000000E-02           8000  2.8998104228925830E-43

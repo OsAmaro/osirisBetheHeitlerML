@@ -1,0 +1,40 @@
+  Iterations =            1
+  
+                                  Event             Avg [s]             Min [s]             Max [s]
+------------------------------------------------------------------------------
+                                   loop        0.326550E+01        0.318168E+01        0.327242E+01
+           dynamic load balance (total)        0.000000E+00        0.000000E+00        0.000000E+00
+                     dynlb get int load        0.000000E+00        0.000000E+00        0.000000E+00
+                       dynlb get new lb        0.000000E+00        0.000000E+00        0.000000E+00
+               dynlb reshape simulation        0.000000E+00        0.000000E+00        0.000000E+00
+   dynlb reshape simulation (particles)        0.000000E+00        0.000000E+00        0.000000E+00
+       dynlb reshape simulation (grids)        0.000000E+00        0.000000E+00        0.000000E+00
+            writing restart information        0.000000E+00        0.000000E+00        0.000000E+00
+                       load diagnostics        0.160000E-05        0.000000E+00        0.600000E-05
+                 compton_NN_calculation        0.000000E+00        0.000000E+00        0.000000E+00
+                     matrix_preparation        0.000000E+00        0.000000E+00        0.000000E+00
+                        total_collision        0.000000E+00        0.000000E+00        0.000000E+00
+                           load_nn_file        0.000000E+00        0.000000E+00        0.000000E+00
+                            dense_layer        0.000000E+00        0.000000E+00        0.000000E+00
+                             batch_norm        0.000000E+00        0.000000E+00        0.000000E+00
+                        func_activation        0.000000E+00        0.000000E+00        0.000000E+00
+                             bh_eval_cs        0.157444E+00        0.156086E+00        0.158935E+00
+                           bh_eval_icdf        0.104958E-01        0.103340E-01        0.106930E-01
+                      dynlb sum up load        0.000000E+00        0.000000E+00        0.000000E+00
+                    update emf boundary        0.907955E-02        0.213000E-03        0.115612E+00
+                           field solver        0.690000E-05        0.400000E-05        0.170000E-04
+                           field smooth        0.000000E+00        0.000000E+00        0.000000E+00
+                        psi calculation        0.000000E+00        0.000000E+00        0.000000E+00
+                        EMF diagnostics        0.160000E-05        0.000000E+00        0.300000E-05
+           electric current diagnostics        0.400000E-06        0.000000E+00        0.200000E-05
+                         current smooth        0.101500E-04        0.100000E-05        0.720000E-04
+                update current boundary        0.679673E-01        0.140000E-04        0.368144E+00
+                        advance deposit        0.297046E+00        0.292214E+00        0.305015E+00
+                         reduce current        0.000000E+00        0.000000E+00        0.000000E+00
+               update particle boundary        0.237646E+00        0.838300E-02        0.699848E+00
+                      cathode injection        0.350000E-06        0.000000E+00        0.200000E-05
+                      neutral injection        0.200000E-06        0.000000E+00        0.100000E-05
+                   particle diagnostics        0.263203E+01        0.222873E+01        0.293300E+01
+                  particle sort (total)        0.000000E+00        0.000000E+00        0.000000E+00
+                particle sort, gen. idx        0.000000E+00        0.000000E+00        0.000000E+00
+     particle sort, rearrange particles        0.000000E+00        0.000000E+00        0.000000E+00

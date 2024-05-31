@@ -1,0 +1,5 @@
+Running dataGen_BH.cpp will produce the "unbalanced" training datasets for the neural networks.
+
+These files should then be stored in a folder /dataCPP
+
+Balancing the data is done within the Jupyter notebooks

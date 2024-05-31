@@ -1,0 +1,4 @@
+! Kinetic energy for species "photons"
+  Iter        Time          Total Par.             Kin. Energy
+     0   0.0000000           40192000  1.5999999662813380E+00
+     1  0.20000000E-02       40192000  1.5999999325252654E+00

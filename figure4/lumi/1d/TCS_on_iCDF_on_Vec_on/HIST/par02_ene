@@ -1,0 +1,4 @@
+! Kinetic energy for species "positrons"
+  Iter        Time          Total Par.             Kin. Energy
+     0   0.0000000             825789  1.6431195243712432E-08
+     1  0.20000000E-02        1651259  3.2837954757363834E-08

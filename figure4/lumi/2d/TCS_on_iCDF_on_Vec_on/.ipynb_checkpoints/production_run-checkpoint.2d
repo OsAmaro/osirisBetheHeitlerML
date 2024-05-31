@@ -1,0 +1,311 @@
+! lumi 2d
+
+simulation
+{
+  algorithm = 'qed',
+  omega_p0 = 1.88e15,
+}
+
+node_conf
+{
+  node_number(1:2) =  8, 64,
+  if_periodic(1:2) = .false., .false.,
+}
+
+grid
+{
+  nx_p(1:2) = 5760, 7680,
+  coordinates = "cartesian",
+}
+
+time_step
+{
+  dt =   0.030,
+  ndump = 1000,
+}
+
+space
+{
+  xmin(1:2) = -278.0, -192.0,
+  xmax(1:2) =   10.0,  192.0,
+  if_move(1:2) = .true., .false.,
+}
+
+time
+{
+  tmin =    0.,
+  tmax =  300.,
+}
+
+emf_bound
+{
+  type(1:2,1) = "lindmann", "lindmann",
+  type(1:2,2) = "open", "open",
+}
+
+emf_solver
+{
+}
+
+diag_emf
+{
+  ndump_fac_ene_int = 1,
+  ndump_fac = 1,
+  ndump_fac_ave = 1,
+  n_ave(1:2)    = 4, 4,
+  reports       = "e1, savg", "e2, savg", "e3, savg",
+                  "b1, savg", "b2, savg", "b3, savg",
+}
+
+particles
+{
+  num_species = 1,
+  num_qed = 1,
+  interpolation = "quadratic",
+}
+
+! --- qed group : definitions --- !
+qed_group
+{
+  if_damp_classical = .false.,
+  if_damp_qed = .true.,
+  if_pairprod = .false.,
+  qed_g_cutoff =   0.,     ! We treat RR with the quantum model for all electrons
+  p_emit_cutoff =  2.,    ! We do not propagate photons from the channel as they don't produce pairs
+}
+
+! --- qed group : diagnostics --- !
+qed_group_diag
+{
+  ndump_fac_rad = 1,
+  ndump_fac_pairs = 1,
+  ndump_fac_radspect = 1,
+  ndump_fac_chi_emit = 1,
+}
+
+! --- qed group : electrons --- !
+species
+{
+  name = "electrons",
+  num_par_x(1:2) = 2, 2,
+  num_par_max = 5000000,
+  rqm = -1.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) = 4.42d-2, 4.42d-2, 4.42d-2,
+  ufl(1:3) = 0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 20.0,
+  profile_type(1:2) = "math func",
+  math_func_expr = "if( (abs(x2) < 150.0), if( (x1 > 62.83) && (x1 < 69.11), 1., if( (x1 > 0.0) && (x1 < 62.83), exp((x1 - 62.83) / 6.28), 0.0) ), 0.0)",
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+	type(1:2,2) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac_ene = 1,
+	ndump_fac = 1,
+
+  ndump_fac_ave = 1,
+  n_ave(1:2)    = 4, 4,
+	reports = "charge, savg",
+
+	ndump_fac_pha = 1,
+  
+  ps_ngamma   =  400,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+
+	ndump_fac_raw = 1,
+  raw_fraction = 1.0e-2,
+}
+
+! --- qed group : positrons --- !
+species
+{
+  name = "positrons",
+  num_par_x(1:2) = 2, 2,
+  num_par_max = 5000000,
+  rqm = 1.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) = 0.0, 0.0, 0.0,
+  ufl(1:3) = 0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 0.0,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+	type(1:2,2) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac_ene = 1,
+	ndump_fac = 1,
+
+  ndump_fac_ave = 1,
+  n_ave(1:2)    = 4, 4,
+	reports = "charge, savg",
+
+	ndump_fac_pha = 1,
+  
+  ps_ngamma   =  400,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+
+	ndump_fac_raw = 1,
+  raw_fraction = 1.0,
+}
+
+! --- qed group 2 : photons --- !
+species
+{
+  name = "photons",
+  num_par_x(1:2) = 2, 2,
+  num_par_max = 6000000,
+  rqm = 0.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) = 0.0, 0.0, 0.0,
+  ufl(1:3) = 0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 0.0,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+	type(1:2,2) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac_ene = 1,
+	ndump_fac = 1,
+
+  ndump_fac_ave = 1,
+  n_ave(1:2)    = 4, 4,
+	reports = "charge, savg",
+
+	ndump_fac_pha = 1,
+  
+  ps_ngamma   =  400,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+
+	ndump_fac_raw = 1,
+  raw_fraction = 1.0e-2,
+}
+
+! --- ions --- !
+species
+{
+  name = "ions",
+  num_par_x(1:2) = 2, 2,
+  num_par_max = 5000000,
+  rqm = 3672.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) = 7.30-4, 7.30-4, 7.30-4,
+  ufl(1:3) = 0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 20.0,
+  profile_type(1:2) = "math func",
+  math_func_expr = "if( (abs(x2) < 150.0), if( (x1 > 62.83) && (x1 < 69.11), 1., if( (x1 > 0.0) && (x1 < 62.83), exp((x1 - 62.83) / 6.28), 0.0) ), 0.0)",
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+	type(1:2,2) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac_ene = 1,
+	ndump_fac = 1,
+
+  ndump_fac_ave = 1,
+  n_ave(1:2)    = 4, 4,
+	reports = "charge, savg",
+
+	ndump_fac_pha = 1,
+  
+  ps_ngamma   =  400,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+
+	ndump_fac_raw = 1,
+  raw_fraction = 1.0e-2,
+}
+
+qed_betheheitler
+{
+  if_betheheitler = .true.,
+  Z_ion = 13,
+  proba_mult = 1.e4,
+  i_ion(1) = 1,
+
+  if_use_ai_tcs = .true.,
+  model_file_tcs = "BH_TCS.txt",
+  if_use_ai_icdf = .true.,
+  model_file_icdf = "BH_iCDF.txt",
+  cs_model = 1,
+}
+
+zpulse
+{
+  omega0 = 1.0,
+  a0 = 200.0,
+
+  pol_type = 0,
+  pol =  0.0,
+
+  propagation = "forward",
+
+  lon_type = "polynomial",
+  lon_rise = 62.8,
+  lon_fall = 62.8,
+  lon_start = -5.0,
+
+  per_type = "gaussian",
+  per_w0 = 20.11,
+  per_focus = 0.0,
+  per_center(1:2) = 0, 0,
+}

@@ -1,0 +1,6 @@
+simulation loop[s] advance_deposit[s] bh_eval_cs[s] bh_eval_icdf[s]
+TCS_of_iCDF_of_Vec_of 0.302752E+04 0.236520E+03 0.331280E+02 0.813844E-03
+TCS_of_iCDF_of_Vec_on 0.220268E+04 0.204390E+03 0.195295E+02 0.662834E-03
+TCS_on_iCDF_on_Vec_of 0.554537E+04 0.335798E+03 0.133164E+03 0.149029E-02
+TCS_on_iCDF_on_Vec_on 0.431947E+04 0.290413E+03 0.105337E+03 0.181997E-02
+

@@ -1,0 +1,4 @@
+! Kinetic energy for species "electrons"
+  Iter        Time          Total Par.             Kin. Energy
+     0   0.0000000             848477  1.6874094924929710E-08
+     1  0.20000000E-02        1697279  3.3774846712324262E-08

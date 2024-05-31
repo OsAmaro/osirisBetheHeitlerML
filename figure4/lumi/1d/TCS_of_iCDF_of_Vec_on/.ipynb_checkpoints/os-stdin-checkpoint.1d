@@ -1,0 +1,269 @@
+! lumi 1d
+
+simulation
+{
+  algorithm = 'qed',
+  omega_p0 = 1.88e15,
+}
+
+node_conf
+{
+  node_number(1) =  20,
+  if_periodic(1) = .true.,
+}
+
+
+!----------spatial grid----------
+grid
+{
+  nx_p(1) = 2000,
+  coordinates = "cartesian",
+}
+
+!----------time step and global data dump timestep number----------
+time_step
+{
+  dt =  0.002,
+  ndump =  1,
+}
+
+!----------spatial limits of the simulations----------
+space
+{
+  xmin(1) = -4.0,
+  xmax(1) =  4.0,
+  if_move(1) = .false.,
+}
+
+!----------time limits ----------
+time
+{
+  tmin =  0.00,
+  tmax =  0.001,
+}
+
+el_mag_fld
+{
+}
+
+!----------boundary conditions for em-fields ----------
+emf_bound
+{
+	type(1:2,1) = "open","open",
+}
+
+!----------number of particle species----------
+particles
+{
+  num_species = 1,
+  num_qed = 1,
+  interpolation = "quadratic",
+}
+
+!----------qed group, setting photon and pair creation----------
+qed_group
+{
+  if_damp_classical = .false.,
+  if_damp_qed = .false.,
+  if_pairprod = .false.,
+  qed_g_cutoff =  1.e10,
+  p_emit_cutoff = 0.0,
+}
+
+!----------qed group 1, setting diagnostics----------
+qed_group_diag
+{
+  ndump_fac_rad = 1,
+  ndump_fac_pairs = 1,
+  ndump_fac_pairs_from_elec = 1,
+}
+
+! ----------------------------------------------------------------
+! electrons
+! ----------------------------------------------------------------
+
+species
+{
+  name = "electrons",
+  num_par_x(1) = 16,
+  num_par_max = 1000000,
+  rqm = -1.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) =  0.0, 0.0, 0.0,
+  ufl(1:3) =  0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 0.0d0,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac = 5,
+	ndump_fac_ene = 1,
+	ndump_fac_raw = 1,
+	reports = "charge", 
+
+  raw_fraction = 1.0,
+}
+
+! ----------------------------------------------------------------
+! positrons
+! ----------------------------------------------------------------
+
+species
+{
+  name = "positrons",
+  num_par_x(1) = 1,
+  num_par_max = 1000000,
+  rqm = 1.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) =  0.0, 0.0, 0.0,
+  ufl(1:3) =  0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 0.0d0,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac = 5,
+	ndump_fac_ene = 1,
+	ndump_fac_raw = 1,
+	reports = "charge", 
+
+  raw_fraction = 1.0,
+
+	ndump_fac_pha = 1,
+  ps_ngamma   =  100,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+}
+
+! ----------------------------------------------------------------
+! photons
+! ----------------------------------------------------------------
+
+species
+{
+  name = "photons",
+  num_par_x(1) = 20096,
+  num_par_max = 500000,
+  rqm = 0.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) =    0.0, 0.0, 0.0,
+  ufl(1:3) = 2000.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 1.0d-4,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac = 5,
+	ndump_fac_ene = 1,
+	ndump_fac_raw = 1,
+	reports = "charge", 
+
+  raw_fraction = 1.0,
+
+	ndump_fac_pha = 1,
+  ps_ngamma   =  100,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+}
+
+! ----------------------------------------------------------------
+! ions
+! ----------------------------------------------------------------
+
+species
+{
+  name = "ions",
+  num_par_x(1) = 4,
+  num_par_max = 30000,
+  rqm = 3672.0,
+  push_type = "standard",
+  add_tag = .true.,
+}
+
+udist
+{
+  uth(1:3) =  0.0, 0.0, 0.0,
+  ufl(1:3) =  0.0, 0.0, 0.0,
+}
+
+profile
+{
+  density = 100.0d0,
+}
+
+spe_bound
+{
+	type(1:2,1) = "open","open",
+}
+
+diag_species
+{
+	ndump_fac = 5,
+	ndump_fac_ene = 1,
+	ndump_fac_raw = 1,
+	reports = "charge", 
+
+  raw_fraction = 1.0,
+
+	ndump_fac_pha = 1,
+  ps_ngamma   =  100,
+  if_ps_gamma_auto = .true.,
+  phasespaces = "g_|charge|",
+}
+
+qed_betheheitler
+{
+  if_betheheitler = .true.,
+  Z_ion = 29,
+  proba_mult = 1.e6,
+  i_ion(1) = 1,
+  
+  if_use_ai_tcs = .false.,
+  model_file_tcs = "BH_TCS.txt",
+  if_use_ai_icdf = .false.,
+  model_file_icdf = "BH_iCDF.txt",
+  cs_model = 1,
+}
+
