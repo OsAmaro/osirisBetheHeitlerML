@@ -19,12 +19,11 @@ This repository contains the Neural Networks developed in the paper by Ó. Amaro
 
 ## Introduction
 
-This work was based on the [comp_scatt_ML](https://github.com/chiarabadiali/comp_scatt_ML) project by [Chiara Badiali](https://github.com/chiarabadiali) and [Pablo Bilbao](https://github.com/pabilbado), where the pairing and scattering of binary collisions between macro-electrons and macro-photons is implemented with a Neural Network. See their publication in [JPP](https://www.cambridge.org/core/journals/journal-of-plasma-physics/article/abs/machinelearningbased-models-in-particleincell-codes-for-advanced-physics-extensions/9D34BB83508AF220EC60EF892079D053) and [pre-print](https://arxiv.org/abs/2206.02937).
-
 In this work we focus on Coulomb-QED processes like Bethe-Heitler (extension to Bremsstrahlung and Trident will be pursued in the future), which can be modelled in PIC codes using Monte-Carlo approaches. Here instead of pairing of particles and binary collisions, particles interact with their local environment (atomic fields in the case of Coulomb, or laser EM fields in the case of laser QED).
 Cross-sections can be computationally demanding to compute in run-time. A common alternative is to use look-up-tables. Although fast, these can be innefficient for multiparameter functions, as they scale poorly in memory.
 Neural Networks are a promising alternative to compress the same information into fewer parameters, leveraging on the simple nonlinear activation functions.
 
+This work was based on the [comp_scatt_ML](https://github.com/chiarabadiali/comp_scatt_ML) project by [Chiara Badiali](https://github.com/chiarabadiali) and [Pablo Bilbao](https://github.com/pabilbado), where the pairing and scattering of binary collisions between macro-electrons and macro-photons is implemented with a Neural Network. See their publication in [JPP](https://www.cambridge.org/core/journals/journal-of-plasma-physics/article/abs/machinelearningbased-models-in-particleincell-codes-for-advanced-physics-extensions/9D34BB83508AF220EC60EF892079D053) and [pre-print](https://arxiv.org/abs/2206.02937).
 
 ## Directory Structure
 
