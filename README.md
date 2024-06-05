@@ -1,19 +1,24 @@
+Neural network sampling of Bethe-Heitler process in particle-in-cell codes
+=============================================================================================================================
+
+<a href="https://arxiv.org/abs/2406.02491" style='vertical-align:middle; display:inline;'><img
+							src="https://img.shields.io/badge/plasm--ph-arXiv%3A2406.02491-B31B1B.svg" class="plain" style="height:25px;" /></a>
+       
+
 <p align="center">
   <img src="assets/osiris_logo.png" alt="osiris_logo" width="500"/></center>
 </p>
-<p align="center"> <a href="https://zenodo.org/badge/latestdoi/466203469">
-  <img src="https://zenodo.org/badge/466203469.svg" alt="DOI">
+<p align="center"> <a href="https://zenodo.org/badge/latestdoi/11422851">
+  <img src="https://zenodo.org/badge/11422851.svg" alt="DOI">
 </a>
 <a href="https://lbesson.mit-license.org/">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
 </a>
 </p>
 
-# Neural network sampling of Bethe-Heitler process in particle-in-cell codes
+This repository contains the Neural Networks developed in the paper by Ó. Amaro _et al._ ["Neural network sampling of Bethe-Heitler process in particle-in-cell codes"](https://arxiv.org/abs/2406.02491) (2024).
 
-
-This repository contains the Neural Networks developed in the paper by Ó. Amaro _et al._ ["Neural network sampling of Bethe-Heitler process in particle-in-cell codes"](https://arxiv.org/abs/????) (2024).
-
+Pre-print: https://arxiv.org/abs/2406.02491
 
 ---
 
