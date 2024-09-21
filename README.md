@@ -77,7 +77,7 @@ To train a new DNN model the following steps should be followed:
 
 This article comprises part of the PhD thesis work of Óscar Amaro, which will be submitted to Instituto Superior Técnico, University of Lisbon.
 
-The authors thank would like to acknowledge fruitful discussions with GoLP team members and for proofreading the manuscript, in particular Prof. Marija Vranic, Mr.[Diogo Carvalho](https://github.com/diogodcarvalho), Mr. Bernardo Barbosa, Mr. Pablo Bilbao, Mr. Lucas Ansia, ???
+The authors thank would like to acknowledge fruitful discussions with GoLP team members and for proofreading the manuscript, in particular Prof. Marija Vranic, Mr.[Diogo Carvalho](https://github.com/diogodcarvalho), Mr. Bernardo Barbosa, Mr. Pablo Bilbao, and Mr. Lucas Ansia.
 
 ### Citation
 
