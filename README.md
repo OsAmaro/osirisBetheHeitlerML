@@ -84,11 +84,19 @@ The authors thank would like to acknowledge fruitful discussions with GoLP team 
 If you use the code, consider citing our [paper](https://arxiv.org/abs/2406.02491):
 
 ```
-@article{amaro2024coulomb,
-  title={Coulomb processes in plasmas with Neural Networks},
-  author={Amaro, Óscar, Badiali, Chiara, and Martinez, Bertrand},
-  journal={arXiv preprint arXiv:2406.02491},
-  year={2024}
+@misc{amaroNeuralNetworkSampling2024,
+  title = {Neural Network Sampling of {{Bethe-Heitler}} Process in Particle-in-Cell Codes},
+  author = {Amaro, {\'O}scar and Badiali, Chiara and Martinez, Bertrand},
+  year = {2024},
+  month = jun,
+  number = {arXiv:2406.02491},
+  eprint = {2406.02491},
+  primaryclass = {physics},
+  publisher = {arXiv},
+  urldate = {2024-06-05},
+  archiveprefix = {arXiv},
+  copyright = {All rights reserved},
+  keywords = {Physics - Computational Physics,Physics - Plasma Physics}
 }
 ```
 
