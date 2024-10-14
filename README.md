@@ -81,13 +81,13 @@ The authors thank would like to acknowledge fruitful discussions with GoLP team 
 
 ### Citation
 
-If you use the code, consider citing our [paper](https://arxiv.org/abs/????):
+If you use the code, consider citing our [paper](https://arxiv.org/abs/2406.02491):
 
 ```
 @article{amaro2024coulomb,
   title={Coulomb processes in plasmas with Neural Networks},
   author={Amaro, Óscar, Badiali, Chiara, and Martinez, Bertrand},
-  journal={arXiv preprint arXiv:????},
+  journal={arXiv preprint arXiv:2406.02491},
   year={2024}
 }
 ```
