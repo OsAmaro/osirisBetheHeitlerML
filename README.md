@@ -2,10 +2,10 @@ Neural network sampling of Bethe-Heitler process in particle-in-cell codes
 =============================================================================================================================
 
 
-<a href="https://doi.org/10.1016/j.jcp.2026.114707" style='vertical-align:middle; display:inline;'><img
-							src="https://img.shields.io/badge/JCP-osirisBetheHeitlerML-lightblue.svg"  class="plain" style="height:25px;" /></a>
 <a href="https://arxiv.org/abs/2406.02491" style='vertical-align:middle; display:inline;'><img
 							src="https://img.shields.io/badge/plasm--ph-arXiv%3A2406.02491-B31B1B.svg" class="plain" style="height:25px;" /></a>
+<a href="https://doi.org/10.1016/j.jcp.2026.114707" style='vertical-align:middle; display:inline;'><img
+							src="https://img.shields.io/badge/JCP-osirisBetheHeitlerML-lightblue.svg"  class="plain" style="height:25px;" /></a>
 <a href="https://zenodo.org/records/11422851" style='vertical-align:middle; display:inline;'><img
 							src="https://img.shields.io/badge/zenodo-11422851-blue.svg" class="plain" style="height:25px;" /></a>
 <a href="https://lbesson.mit-license.org/" style='vertical-align:middle; display:inline;'><img
